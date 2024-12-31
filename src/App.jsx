@@ -38,7 +38,7 @@ const App = () => {
     >
       <Confetti />
       <div className="bg-white bg-opacity-80 p-3 rounded-lg shadow-md text-black">
-        <AdComponent k='ffa640aac1db63cb8a04a6a3ea51215d' h={90} w={728} invoke='//www.highperformanceformat.com/ffa640aac1db63cb8a04a6a3ea51215d/invoke.js' />
+        <AdComponent k='acb0251e426334a768753077315281c4' h={60} w={468} invoke='//www.highperformanceformat.com/acb0251e426334a768753077315281c4/invoke.js' />
       </div>
       <div className="text-center p-6 max-w-lg w-full bg-black bg-opacity-50 rounded-lg shadow-lg">
         <div className='bg-white/90 rounded-lg p-2 flex flex-col gap-2'>
