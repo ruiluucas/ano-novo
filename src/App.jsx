@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import { FaWhatsapp, FaTelegramPlane, FaInstagram, FaFacebookF } from 'react-icons/fa';
 import Confetti from 'react-confetti';
+import { Helmet } from 'react-helmet';
 
 const App = () => {
   const [name, setName] = useState('');
@@ -36,6 +37,10 @@ const App = () => {
       }}
       className="min-h-screen flex gap-2 flex-col items-center justify-center text-white p-4 sm:p-6 lg:p-8"
     >
+      <Helmet>
+        {/* Código de Verificação */}
+        <meta name="bidvertiser-verification" content="<!-- Bidvertiser2097323 -->" />
+      </Helmet>
       <Confetti />
       <div className="bg-white bg-opacity-80 p-3 rounded-lg shadow-md text-black">
         <AdComponent k='acb0251e426334a768753077315281c4' h={60} w={468} invoke='//www.highperformanceformat.com/acb0251e426334a768753077315281c4/invoke.js' />
