@@ -49,12 +49,6 @@ const App = () => {
             Desejo a você um ano cheio de realizações e momentos felizes!
           </p>
         </div>
-
-        <section className="mt-8 grid grid-cols-1 gap-4 sm:grid-cols-2">
-          <div className="bg-white bg-opacity-80 p-3 rounded-lg shadow-md text-black">
-            <div id="container-3b7d984e5b1ffbf42135d158f981264f"></div>
-          </div>
-        </section>
         <nav className="flex flex-wrap justify-center gap-2 mt-6">
           <a
             href={shareLinks.whatsapp}
