@@ -53,6 +53,7 @@ const App = () => {
         <section className="mt-8 grid grid-cols-1 gap-4 sm:grid-cols-2">
           <div className="bg-white bg-opacity-80 p-3 rounded-lg shadow-md text-black">
             <AdComponent k='acb0251e426334a768753077315281c4' h={60} w={468} invoke='//www.highperformanceformat.com/acb0251e426334a768753077315281c4/invoke.js' />
+            <AdComponent k='acb0251e426334a768753077315281c4' h={60} w={468} invoke='//www.highperformanceformat.com/acb0251e426334a768753077315281c4/invoke.js' />
           </div>
         </section>
         <nav className="flex flex-wrap justify-center gap-2 mt-6">
