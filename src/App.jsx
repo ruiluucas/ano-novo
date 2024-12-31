@@ -106,7 +106,7 @@ const App = () => {
           <input
             name="name"
             type="text"
-            placeholder="Digite seu nome"
+            placeholder="Digite o nome do destinatário"
             className="p-3 w-full rounded-lg text-black mb-4 border border-yellow-500"
           />
           <button
