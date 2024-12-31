@@ -38,7 +38,7 @@ const App = () => {
     >
       <Confetti />
       <div className="bg-white bg-opacity-80 p-3 rounded-lg shadow-md text-black">
-        <p className="font-medium">Anúncio 3</p>
+        <AdComponent />
       </div>
       <div className="text-center p-6 max-w-lg w-full bg-black bg-opacity-50 rounded-lg shadow-lg">
         <div className='bg-white/90 rounded-lg p-2 flex flex-col gap-2'>
@@ -52,10 +52,7 @@ const App = () => {
 
         <section className="mt-8 grid grid-cols-1 gap-4 sm:grid-cols-2">
           <div className="bg-white bg-opacity-80 p-3 rounded-lg shadow-md text-black">
-            <p className="font-medium">Anúncio 1</p>
-          </div>
-          <div className="bg-white bg-opacity-80 p-3 rounded-lg shadow-md text-black">
-            <p className="font-medium">Anúncio 2</p>
+            <AdComponentSmall />
           </div>
         </section>
         <nav className="flex flex-wrap justify-center gap-2 mt-6">
@@ -119,6 +116,77 @@ const App = () => {
       </div>
     </div>
   );
+};
+
+
+const AdComponent = () => {
+  useEffect(() => {
+    const script1 = document.createElement('script');
+    const script2 = document.createElement('script');
+
+    // Configuração do atOptions
+    script1.type = 'text/javascript';
+    script1.innerHTML = `
+      atOptions = {
+        'key' : 'c28a22a56092feca2e3885b3aad6e7b9',
+        'format' : 'iframe',
+        'height' : 600,
+        'width' : 160,
+        'params' : {}
+      };
+    `;
+
+    // Script que invoca o anúncio
+    script2.type = 'text/javascript';
+    script2.src = '//www.highperformanceformat.com/c28a22a56092feca2e3885b3aad6e7b9/invoke.js';
+
+    // Adiciona os scripts ao DOM
+    const adContainer = document.getElementById('ad-container');
+    adContainer.appendChild(script1);
+    adContainer.appendChild(script2);
+
+    // Limpeza do DOM ao desmontar o componente
+    return () => {
+      adContainer.innerHTML = '';
+    };
+  }, []);
+
+  return <div id="ad-container" style={{ width: 160, height: 600 }} />;
+};
+
+const AdComponentSmall = () => {
+  useEffect(() => {
+    const script1 = document.createElement('script');
+    const script2 = document.createElement('script');
+
+    // Configuração do atOptions
+    script1.type = 'text/javascript';
+    script1.innerHTML = `
+      atOptions = {
+        'key' : '7a43aa2d45013a79549767acf0f35fed',
+        'format' : 'iframe',
+        'height' : 300,
+        'width' : 160,
+        'params' : {}
+      };
+    `;
+
+    // Script que invoca o anúncio
+    script2.type = 'text/javascript';
+    script2.src = '//www.highperformanceformat.com/7a43aa2d45013a79549767acf0f35fed/invoke.js';
+
+    // Adiciona os scripts ao DOM
+    const adContainer = document.getElementById('ad-container-small');
+    adContainer.appendChild(script1);
+    adContainer.appendChild(script2);
+
+    // Limpeza do DOM ao desmontar o componente
+    return () => {
+      adContainer.innerHTML = '';
+    };
+  }, []);
+
+  return <div id="ad-container-small" style={{ width: 160, height: 300 }} />;
 };
 
 export default App;
