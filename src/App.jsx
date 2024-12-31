@@ -53,7 +53,6 @@ const App = () => {
 
         <section className="mt-8 grid grid-cols-1 gap-4 sm:grid-cols-2">
           <div className="bg-white bg-opacity-80 p-3 rounded-lg shadow-md text-black">
-            <script async="async" data-cfasync="false" src="//pl25440726.profitablecpmrate.com/3b7d984e5b1ffbf42135d158f981264f/invoke.js"></script>
             <div id="container-3b7d984e5b1ffbf42135d158f981264f"></div>
           </div>
         </section>
