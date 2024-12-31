@@ -38,7 +38,7 @@ const App = () => {
     >
       <Confetti />
       <div className="bg-white bg-opacity-80 p-3 rounded-lg shadow-md text-black">
-        <AdComponent />
+        <AdComponent k='ffa640aac1db63cb8a04a6a3ea51215d' h={90} w={728} invoke='//www.highperformanceformat.com/ffa640aac1db63cb8a04a6a3ea51215d/invoke.js' />
       </div>
       <div className="text-center p-6 max-w-lg w-full bg-black bg-opacity-50 rounded-lg shadow-lg">
         <div className='bg-white/90 rounded-lg p-2 flex flex-col gap-2'>
@@ -52,7 +52,7 @@ const App = () => {
 
         <section className="mt-8 grid grid-cols-1 gap-4 sm:grid-cols-2">
           <div className="bg-white bg-opacity-80 p-3 rounded-lg shadow-md text-black">
-            <AdComponentSmall />
+            <AdComponent k='acb0251e426334a768753077315281c4' h={60} w={468} invoke='//www.highperformanceformat.com/acb0251e426334a768753077315281c4/invoke.js' />
           </div>
         </section>
         <nav className="flex flex-wrap justify-center gap-2 mt-6">
@@ -118,75 +118,35 @@ const App = () => {
   );
 };
 
-
-const AdComponent = () => {
+function AdComponent({ k, h, w, invoke }) {
   useEffect(() => {
     const script1 = document.createElement('script');
     const script2 = document.createElement('script');
 
-    // Configuração do atOptions
     script1.type = 'text/javascript';
     script1.innerHTML = `
       atOptions = {
-        'key' : 'c28a22a56092feca2e3885b3aad6e7b9',
+        'key' : ${k},
         'format' : 'iframe',
-        'height' : 600,
-        'width' : 160,
+        'height' : ${h},
+        'width' : ${w},
         'params' : {}
       };
     `;
 
-    // Script que invoca o anúncio
     script2.type = 'text/javascript';
-    script2.src = '//www.highperformanceformat.com/c28a22a56092feca2e3885b3aad6e7b9/invoke.js';
+    script2.src = invoke;
 
-    // Adiciona os scripts ao DOM
-    const adContainer = document.getElementById('ad-container');
-    adContainer.appendChild(script1);
-    adContainer.appendChild(script2);
-
-    // Limpeza do DOM ao desmontar o componente
-    return () => {
-      adContainer.innerHTML = '';
-    };
-  }, []);
-
-  return <div id="ad-container" style={{ width: 160, height: 600 }} />;
-};
-
-const AdComponentSmall = () => {
-  useEffect(() => {
-    const script1 = document.createElement('script');
-    const script2 = document.createElement('script');
-
-    // Configuração do atOptions
-    script1.type = 'text/javascript';
-    script1.innerHTML = `
-      atOptions = {
-        'key' : '7a43aa2d45013a79549767acf0f35fed',
-        'format' : 'iframe',
-        'height' : 300,
-        'width' : 160,
-        'params' : {}
-      };
-    `;
-
-    // Script que invoca o anúncio
-    script2.type = 'text/javascript';
-    script2.src = '//www.highperformanceformat.com/7a43aa2d45013a79549767acf0f35fed/invoke.js';
-
-    // Adiciona os scripts ao DOM
     const adContainer = document.getElementById('ad-container-small');
     adContainer.appendChild(script1);
     adContainer.appendChild(script2);
 
-    // Limpeza do DOM ao desmontar o componente
     return () => {
       adContainer.innerHTML = '';
     };
   }, []);
 
-  return <div id="ad-container-small" style={{ width: 160, height: 300 }} />;
+  return <div id="ad-container-small" style={{ width: w, height: h }} />;
 };
 
 export default App;
